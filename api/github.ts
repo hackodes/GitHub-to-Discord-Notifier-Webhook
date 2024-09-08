@@ -56,7 +56,9 @@ export default async (req: VercelRequest, res: VercelResponse): Promise<void> =>
       `;
       }).reverse();
 
-      const chunks = chunkText(entries, 4096);
+      const chunkedEntries = entries.join('\n\n');
+      const chunks = chunkText([chunkedEntries], 4096); 
+      
       const embeds = chunks.map((chunk, i) => ({
         author: {
           name: ownerName,
