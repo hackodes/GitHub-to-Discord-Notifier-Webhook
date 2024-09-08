@@ -2,6 +2,9 @@
 
 A serverless function that listens for GitHub webhook events, processes commit data from a repository, and sends formatted notifications to a Discord channel via a webhook URL. This project makes improvements to GitHub's built-in webhook integration by providing more detailed commit information, such as commit message, author, commit URL, additions, deletions, and file changes. It also allows customization of the bot's name, avatar, and embed color for Discord messages so you can customize the appearance of the notifications to suit your needs.
 
+<img src="examples/example1.PNG" alt="Example notification with single commit" width="600"/>
+<img src="examples/example2.PNG" alt="Example notification with multiple commits" width="600"/>
+
 ### How It Works
 
 - Receives a POST request from GitHub when commits are pushed to a repository.
