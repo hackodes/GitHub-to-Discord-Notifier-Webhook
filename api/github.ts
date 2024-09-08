@@ -49,12 +49,11 @@ export default async (req: VercelRequest, res: VercelResponse): Promise<void> =>
       );
 
       const entries = commits.map(commit => {
-        return `
-        [\`${commit.id.substring(0, 7)}\`](${commit.link}) ${truncateText(commit.message)} - [${commit.author}](${commit.authorUrl})
-        ⤷ \`✏️\` **${formatText(commit.fileCount, 'files')}** changed with \`🟢\` **${formatText(commit.additions, 'additions')}** and \`🔴\` **${formatText(commit.deletions, 'deletions')}**.
-        ⤷ \`🕒\` **Committed on:** ${formatDate(commit.timestamp)} 
-      `;
+        return `[\`${commit.id.substring(0, 7)}\`](${commit.link}) ${truncateText(commit.message)} - [${commit.author}](${commit.authorUrl})
+      ⤷ \`✏️\` **${formatText(commit.fileCount, 'files')}** changed with \`🟢\` **${formatText(commit.additions, 'additions')}** and \`🔴\` **${formatText(commit.deletions, 'deletions')}**.
+      ⤷ \`🕒\` **Committed on:** ${formatDate(commit.timestamp)}`;
       }).reverse();
+      
 
       const chunkedEntries = entries.join('\n\n');
       const chunks = chunkText([chunkedEntries], 4096); 
