@@ -81,15 +81,15 @@ export default async (req: VercelRequest, res: VercelResponse): Promise<void> =>
       );
 
       if (responses.every(response => response.status === 204)) {
-        res.status(200).send('OK');
+        res.status(200).send('Message sent successfully');
       } else {
         res.status(500).send('Error sending message');
       }
     } catch (error) {
       console.error(error);
-      res.status(500).send('Internal Server Error');
+      res.status(500).send('Internal server error');
     }
   } else {
-    res.status(405).send('Method Not Allowed');
+    res.status(405).send('Method not allowed');
   }
 };
