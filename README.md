@@ -21,7 +21,7 @@ A serverless function that listens for GitHub webhook events, processes commit d
 
 #### Configure Environment Variables
 
-The `DISCORD_WEBHOOK_URL` and `GITHUB_ACCESS_TOKEN` environment variables in Vercel will need to be configured. You can set these variables in the Vercel dashboard under `Settings` -> `Environment Variables`:
+Configure the `DISCORD_WEBHOOK_URL` and `GITHUB_ACCESS_TOKEN` environment variables. You can set these variables in the Vercel dashboard under `Settings` -> `Environment Variables`:
 
   - Create a new webhook in Discord under `Server Settings` -> `Integrations` -> `Webhooks`. Copy the URL and set it in the `DISCORD_WEBHOOK_URL` environment variable. This is the URL of your Discord webhook
   
