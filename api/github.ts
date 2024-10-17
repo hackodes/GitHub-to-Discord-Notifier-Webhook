@@ -4,7 +4,7 @@ import { VercelRequest, VercelResponse } from '@vercel/node';
 import { Commit } from '../interfaces/commit';
 
 import config from '../config.json';
-import { chunkItems, chunkText, formatText, truncateText, getAvatarUrl, formatDate } from '../utils';
+import { chunkItems, chunkText, formatText, truncateText, formatDate } from '../utils';
 
 const webhookUrl = process.env.DISCORD_WEBHOOK_URL!;
 const token = process.env.GITHUB_ACCESS_TOKEN!;
@@ -25,8 +25,7 @@ export default async (req: VercelRequest, res: VercelResponse): Promise<void> =>
     const headUrl = data.head_commit.url;
     const commitIds = data.commits.map((commit: any) => commit.id);
 
-    const requestBaseUrl = String(req.headers['x-forwarded-host'] || req.headers.host || 'localhost');
-    const avatarUrl = getAvatarUrl(requestBaseUrl, config.avatarURL); 
+    const avatarUrl = config.avatarURL; 
 
     try {
       const commits = await Promise.all(
