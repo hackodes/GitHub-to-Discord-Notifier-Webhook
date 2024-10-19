@@ -1,5 +1,12 @@
 {
     "botName": "GitHub",
     "avatarURL": "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
-    "embedColor": 5793266 
+    "pushEmbedColors": {
+        "commitColor": 5793266
+    },
+    "pullRequestEmbedColors": {
+        "mergedColor": 2067276,
+        "closedColor": 10038562,
+        "openColor": 16760576
+    }
 }
