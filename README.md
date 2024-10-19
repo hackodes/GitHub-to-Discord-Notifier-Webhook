@@ -1,6 +1,6 @@
 ## GitHub to Discord Notifier Webhook
 
-A serverless function that listens for GitHub webhook events, processes commit data from a repository, and sends formatted notifications to a Discord channel via a webhook URL. This project makes improvements to GitHub's built-in webhook integration by providing more detailed commit information, such as commit message, author, commit URL, additions, deletions, and file changes. It also allows customization of the bot's name, avatar, and embed color for Discord messages so you can customize the appearance of the notifications to suit your needs.
+A serverless function that listens for GitHub webhook events, processes commit data from a repository, and sends formatted notifications to a Discord channel via a webhook URL. This project makes improvements to GitHub's built-in webhook integration by providing more detailed commit information, such as commit message, author, co-authors, commit URL, additions, deletions, and file changes. It also allows customization of the bot's name, avatar, and embed colors for Discord messages so you can customize the appearance of the notifications to suit your needs.
 
 <img src="examples/example1.PNG" alt="Example notification with single commit" width="600"/>
 <img src="examples/example2.PNG" alt="Example notification with multiple commits" width="600"/>
@@ -42,6 +42,8 @@ Configure the `DISCORD_WEBHOOK_URL` and `GITHUB_ACCESS_TOKEN` environment variab
 - Set the `Content type` to `application/json`. Leave the `Secret` field empty.
 
 - Choose the events you want to trigger the webhook. Select `Just the push event`, and click `Add webhook` to save.
+
+- In the `config.json` file, you can customize the bot's name, avatar, and embed colors for Discord messages. Embed colors are in decimal format, e.g., `10038562` for red. Use a hex color converter to get the decimal value for your desired color.
 
 #### Test the Integration
 
